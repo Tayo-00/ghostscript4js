@@ -159,7 +159,7 @@ class GhostscriptWorker : public Napi::AsyncWorker
         char **gsargv = new char *[gsargc];
         for (int i = 0; i < gsargc; i++)
         {
-            gsargv[i] = (char *)explodedCmd[i].c_str();
+            gsargv[i] = (char *)RAWcmd.c_str(); // TODO: Make a cleaner solution for the arguments
         }
         try
         {
